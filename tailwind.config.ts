@@ -13,9 +13,8 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1110px",
       },
     },
     extend: {
@@ -24,7 +23,8 @@ const config = {
         desktop: "1440px",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        alta: ["var(--font-alta)", ...fontFamily.sans],
+        josefin: ["var(--font-josefin)", ...fontFamily.sans],
       },
       fontSize: {
         body: "15px",
