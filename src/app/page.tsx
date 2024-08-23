@@ -55,13 +55,13 @@ const Header = () => {
         </nav>
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="fixed inset-0 z-50 flex h-screen w-screen flex-col bg-black p-6 md:hidden">
-            <div className="flex justify-between">
+          <div className="fixed inset-0 z-50 flex h-screen w-screen flex-col bg-black md:hidden">
+            <div className="container mx-auto flex w-full max-w-[1110px] items-center justify-between px-6 pt-8 lg:px-0">
               <Image
                 src="/images/logo.svg"
                 alt="Loopstudios"
-                width={144}
-                height={24}
+                width={192}
+                height={32}
               />
               <button
                 className="text-white"
@@ -76,7 +76,7 @@ const Header = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex h-full flex-col justify-center">
+            <div className="flex h-full flex-col justify-center px-6">
               <ul className="font-josefin text-fem-white flex flex-col gap-6 text-[24px] font-light uppercase">
                 {NAV_ITEMS.map((item) => (
                   <li key={item} className="group relative cursor-pointer">
