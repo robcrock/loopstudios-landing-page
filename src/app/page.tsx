@@ -67,16 +67,16 @@ const InteractiveVRSection = () => {
 
 const CreationGallery = () => {
   return (
-    <section className="container mx-auto mt-[184px] flex flex-col gap-20">
-      <div className="flex items-end justify-between">
-        <h2 className="font-josefin text-[48px] font-light uppercase leading-[48px]">
+    <section className="container mx-auto mt-[184px] flex flex-col content-center gap-20">
+      <div className="flex w-full items-end justify-between">
+        <h2 className="font-josefin mx-auto text-[48px] font-light uppercase leading-[48px] md:mx-0">
           OUR CREATIONS
         </h2>
-        <button className="font-regular bg-fem-black px-10 py-3 text-[15px] uppercase leading-[25px] tracking-[5px] text-white">
+        <button className="font-regular hover:bg-fem-black border-fem-black bg-fem-white transition-text hidden h-10 w-[157px] border text-[15px] uppercase leading-[25px] tracking-[5px] text-black transition-colors duration-300 hover:text-white md:block">
           SEE ALL
         </button>
       </div>
-      <div className="grid grid-cols-4 gap-[30px]">
+      <div className="grid grid-cols-1 gap-6 px-6 md:grid-cols-4 md:gap-[30px] md:px-0">
         {creations.map((creation, index) => (
           <div key={index} className="group relative cursor-pointer">
             <Image
@@ -84,18 +84,23 @@ const CreationGallery = () => {
               alt={creation.alt}
               width={400}
               height={400}
-              className="h-auto w-full"
+              className="h-[240px] w-full object-cover object-center md:h-auto md:object-fill"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="bg-fem-white absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-75" />
             <h3
-              className={`font-josefin text-fem-white absolute bottom-8 left-10 transition-colors duration-300 ${creation.specialWidth ? "w-[164px]" : "w-[148px]"} group-hover:text-fem-black text-[32px] font-light uppercase leading-[32px]`}
+              className={`font-josefin text-fem-white absolute bottom-5 left-5 transition-colors duration-300 md:bottom-8 md:left-10 ${
+                creation.specialWidth ? "w-[164px]" : "w-[148px]"
+              } group-hover:text-fem-black text-2xl font-light uppercase leading-tight md:text-[32px] md:leading-[32px]`}
             >
               {creation.title}
             </h3>
           </div>
         ))}
       </div>
+      <button className="-mt-30 font-regular border-fem-black bg-fem-white hover:bg-fem-black hover:text-fem-white transition-text mx-auto h-10 w-[157px] border text-[15px] uppercase leading-[25px] tracking-[5px] text-black transition-colors duration-300 md:hidden">
+        SEE ALL
+      </button>
     </section>
   );
 };

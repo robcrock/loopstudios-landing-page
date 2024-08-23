@@ -1,4 +1,4 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const { screens, fontFamily } = require("tailwindcss/defaultTheme");
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -14,14 +14,11 @@ const config = {
     container: {
       center: true,
       screens: {
+        ...screens,
         "2xl": "1110px",
       },
     },
     extend: {
-      screens: {
-        mobile: "375px",
-        desktop: "1440px",
-      },
       fontFamily: {
         alta: ["var(--font-alta)", ...fontFamily.sans],
         josefin: ["var(--font-josefin)", ...fontFamily.sans],
