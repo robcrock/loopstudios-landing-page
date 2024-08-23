@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className="relative flex h-screen flex-col justify-between pt-8 md:aspect-[1440/650] md:h-auto md:pt-16">
       <div className="absolute inset-0 bg-[url('/images/desktop/image-hero.jpg')] bg-cover bg-center before:absolute before:inset-0 before:bg-black before:opacity-40"></div>
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1110px] flex-col justify-between px-6 md:container lg:px-0">
+      <div className="container relative z-10 mx-auto flex h-full w-full max-w-[1110px] flex-col justify-between px-6 lg:px-0">
         <nav className="flex items-center justify-between">
           <Image
             src="/images/logo.svg"
@@ -90,7 +90,7 @@ const Header = () => {
             </div>
           </div>
         )}
-        <h1 className="font-josefin mb-[10%] mt-auto w-full border-2 border-white p-6 text-[40px] font-light leading-[40px] text-white md:w-[650px] md:p-10 md:pb-8 md:text-[70px] md:leading-[70px]">
+        <h1 className="font-josefin mb-[10%] mt-auto w-full border-2 border-white p-6 text-[40px] font-light leading-[40px] text-white md:max-w-[650px] md:p-10 md:pb-8 md:text-[70px] md:leading-[70px]">
           IMMERSIVE EXPERIENCES THAT DELIVER
         </h1>
       </div>
