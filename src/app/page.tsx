@@ -1,19 +1,16 @@
 import Image from "next/image";
+import Navigation from "../components/Navigation";
+import SocialIcons from "../components/SocialIcons";
+
+const NAV_ITEMS = ["About", "Careers", "Events", "Products", "Support"];
 
 export default function Home() {
   return (
     <main>
       <Header />
       <InteractiveVRSection />
-
-      <section>
-        <h2>OUR CREATIONS</h2>
-        {/* Add a list or grid of creations */}
-      </section>
-      <footer>
-        <h2>LOOPSTUDIOS</h2>
-        {/* Add footer content */}
-      </footer>
+      <CreationGallery />
+      <Footer />
     </main>
   );
 }
@@ -30,13 +27,7 @@ const Header = () => {
             width={192}
             height={32}
           />
-          <ul className="font-regular flex gap-8 text-[15px] leading-[25px] text-white">
-            <li>About</li>
-            <li>Careers</li>
-            <li>Events</li>
-            <li>Products</li>
-            <li>Support</li>
-          </ul>
+          <Navigation items={NAV_ITEMS} />
         </nav>
         <h1 className="font-josefin mb-[10%] mt-auto w-[650px] border-2 border-white p-10 pb-8 text-[70px] font-light leading-[70px] text-white">
           IMMERSIVE EXPERIENCES THAT DELIVER
@@ -74,11 +65,101 @@ const InteractiveVRSection = () => {
   );
 };
 
-// About Careers Events Products Support Immersive experiences that deliver
-// The leader in interactive VR Founded in 2011, Loopstudios has been
-// producing world-class virtual reality projects for some of the best
-// companies around the globe. Our award-winning creations have transformed
-// businesses through digital experiences that bind to their brand. Our
-// creations See all Deep earth Night arcade Soccer team VR The grid From up
-// above VR Pocket borealis The curiosity Make it fisheye About Careers
-// Events Products Support © 2021 Loopstudios. All rights reserved.
+const CreationGallery = () => {
+  return (
+    <section className="container mx-auto mt-[184px] flex flex-col gap-20">
+      <div className="flex items-end justify-between">
+        <h2 className="font-josefin text-[48px] font-light uppercase leading-[48px]">
+          OUR CREATIONS
+        </h2>
+        <button className="font-regular bg-fem-black px-10 py-3 text-[15px] uppercase leading-[25px] tracking-[5px] text-white">
+          SEE ALL
+        </button>
+      </div>
+      <div className="grid grid-cols-4 gap-[30px]">
+        {creations.map((creation, index) => (
+          <div key={index} className="group relative cursor-pointer">
+            <Image
+              src={creation.src}
+              alt={creation.alt}
+              width={400}
+              height={400}
+              className="h-auto w-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="bg-fem-white absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-75" />
+            <h3
+              className={`font-josefin text-fem-white absolute bottom-8 left-10 transition-colors duration-300 ${creation.specialWidth ? "w-[164px]" : "w-[148px]"} group-hover:text-fem-black text-[32px] font-light uppercase leading-[32px]`}
+            >
+              {creation.title}
+            </h3>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const creations = [
+  {
+    src: "/images/desktop/image-deep-earth.jpg",
+    alt: "Deep Earth",
+    title: "Deep Earth",
+  },
+  {
+    src: "/images/desktop/image-night-arcade.jpg",
+    alt: "Night Arcade",
+    title: "Night Arcade",
+  },
+  {
+    src: "/images/desktop/image-soccer-team.jpg",
+    alt: "Soccer Team VR",
+    title: "Soccer Team VR",
+  },
+  { src: "/images/desktop/image-grid.jpg", alt: "The Grid", title: "The Grid" },
+  {
+    src: "/images/desktop/image-from-above.jpg",
+    alt: "From Up Above VR",
+    title: "From Up Above VR",
+    specialWidth: true,
+  },
+  {
+    src: "/images/desktop/image-pocket-borealis.jpg",
+    alt: "Pocket Borealis",
+    title: "Pocket Borealis",
+  },
+  {
+    src: "/images/desktop/image-curiosity.jpg",
+    alt: "The Curiosity",
+    title: "The Curiosity",
+  },
+  {
+    src: "/images/desktop/image-fisheye.jpg",
+    alt: "Make it Fisheye",
+    title: "Make it Fisheye",
+  },
+];
+
+const Footer = () => {
+  return (
+    <footer className="mt-[184px] h-[160px] bg-black text-white">
+      <div className="container mx-auto flex h-full items-center justify-between py-[44px] pb-[32px]">
+        <div className="flex flex-col gap-6">
+          <Image
+            src="/images/logo.svg"
+            alt="Loopstudios"
+            width={144}
+            height={24}
+          />
+          <Navigation items={NAV_ITEMS} />
+        </div>
+        <div className="flex flex-col items-end gap-6">
+          <SocialIcons />
+          <p className="text-sm opacity-50">
+            © 2021 Loopstudios. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
