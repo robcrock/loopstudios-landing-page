@@ -20,9 +20,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative flex h-screen flex-col justify-between pt-16 md:aspect-[1440/650] md:h-auto">
+    <header className="relative flex h-screen flex-col justify-between pt-8 md:aspect-[1440/650] md:h-auto md:pt-16">
       <div className="absolute inset-0 bg-[url('/images/desktop/image-hero.jpg')] bg-cover bg-center before:absolute before:inset-0 before:bg-black before:opacity-40"></div>
-      <div className="relative z-10 mx-auto flex h-full w-full flex-col justify-between px-6 md:container md:px-0">
+      <div className="relative z-10 mx-auto flex h-full w-full flex-col justify-between px-6 md:container lg:px-0">
         <nav className="flex items-center justify-between">
           <Image
             src="/images/logo.svg"
@@ -90,7 +90,7 @@ const Header = () => {
             </div>
           </div>
         )}
-        <h1 className="font-josefin mb-[10%] mt-auto w-full border-2 border-white p-10 pb-8 text-[40px] font-light leading-[40px] text-white md:w-[650px] md:text-[70px] md:leading-[70px]">
+        <h1 className="font-josefin mb-[10%] mt-auto w-full border-2 border-white p-6 text-[40px] font-light leading-[40px] text-white md:w-[650px] md:p-10 md:pb-8 md:text-[70px] md:leading-[70px]">
           IMMERSIVE EXPERIENCES THAT DELIVER
         </h1>
       </div>
@@ -100,7 +100,7 @@ const Header = () => {
 
 const InteractiveVRSection = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto max-w-[1110px]">
       <section className="relative mt-40 px-6 md:px-0">
         <Image
           src="/images/desktop/image-interactive.jpg"
@@ -128,7 +128,7 @@ const InteractiveVRSection = () => {
 
 const CreationGallery = () => {
   return (
-    <section className="container mx-auto mt-[184px] flex flex-col content-center gap-20">
+    <section className="container mx-auto mt-[184px] flex max-w-[1110px] flex-col content-center gap-20">
       <div className="flex w-full items-end justify-between">
         <h2 className="font-josefin mx-auto text-[48px] font-light uppercase leading-[48px] md:mx-0">
           OUR CREATIONS
@@ -209,7 +209,7 @@ const creations = [
 const Footer = () => {
   return (
     <footer className="mt-[184px] bg-black text-white">
-      <div className="container mx-auto flex h-full flex-col items-center justify-between py-[56px] md:flex-row md:py-[44px]">
+      <div className="container mx-auto flex h-full max-w-[1110px] flex-col items-center justify-between py-[56px] md:flex-row md:py-[44px]">
         <div className="mb-12 flex flex-col items-center gap-6 md:mb-0 md:items-start">
           <Image
             src="/images/logo.svg"

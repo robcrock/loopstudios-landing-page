@@ -69,6 +69,9 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      maxWidth: {
+        "2xl": "1110px", // Ensure the maximum width is 1110px
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
