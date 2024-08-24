@@ -101,7 +101,7 @@ const InteractiveVRSection = () => {
           alt="Interactive"
           width={731}
           height={500}
-          className="w-full"
+          className="max-h-[500px] w-full max-w-[731px]"
         />
         <div className="bg-white md:absolute md:bottom-0 md:right-0 md:h-[317px] md:w-[541px]">
           <div className="flex flex-col content-center gap-4 py-12 text-center md:ml-24 md:mt-24 md:gap-6 md:px-6 md:py-0 md:text-left">
