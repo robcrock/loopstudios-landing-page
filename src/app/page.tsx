@@ -100,20 +100,21 @@ const Header = () => {
 
 const InteractiveVRSection = () => {
   return (
-    <div className="container mx-auto max-w-[1110px]">
-      <section className="relative mt-40 px-6 md:px-0">
+    <div className="container mx-auto max-w-[1110px] px-6 md:px-0">
+      <section className="relative mt-24 md:mt-40">
         <Image
           src="/images/desktop/image-interactive.jpg"
           alt="Interactive"
           width={731}
           height={500}
+          className="w-full"
         />
-        <div className="bottom-0 right-0 flex h-[317px] w-[541px] bg-white px-6 md:absolute">
-          <div className="mx-6 mt-14 flex h-full w-full flex-col content-center gap-4 md:mx-0 md:ml-24 md:mt-24 md:gap-6">
-            <h2 className="font-josefin text-center text-[48px] font-light uppercase leading-[48px] md:text-left">
+        <div className="bg-white md:absolute md:bottom-0 md:right-0 md:h-[317px] md:w-[541px]">
+          <div className="flex flex-col content-center gap-4 py-12 text-center md:ml-24 md:mt-24 md:gap-6 md:px-6 md:py-0 md:text-left">
+            <h2 className="font-josefin text-[32px] font-light uppercase leading-[32px] md:text-[48px] md:leading-[48px]">
               THE LEADER IN INTERACTIVE VR
             </h2>
-            <p className="font-regular font-alata text-center text-[15px] leading-[25px] opacity-50 md:text-left">
+            <p className="font-regular font-alata text-[15px] leading-[25px] opacity-50">
               Founded in 2011, Loopstudios has been producing world-class
               virtual reality projects for some of the best companies around the
               globe. Our award-winning creations have transformed businesses
@@ -128,9 +129,9 @@ const InteractiveVRSection = () => {
 
 const CreationGallery = () => {
   return (
-    <section className="container mx-auto mt-[184px] flex max-w-[1110px] flex-col content-center gap-20">
+    <section className="container mx-auto mt-[184px] flex max-w-[1110px] flex-col content-center gap-12 md:gap-20">
       <div className="flex w-full items-end justify-between">
-        <h2 className="font-josefin mx-auto text-[48px] font-light uppercase leading-[48px] md:mx-0">
+        <h2 className="font-josefin mx-auto text-[32px] font-light uppercase leading-[32px] md:mx-0 md:text-[48px] md:leading-[48px]">
           OUR CREATIONS
         </h2>
         <button className="font-regular hover:bg-fem-black border-fem-black bg-fem-white transition-text hidden h-10 w-[157px] border text-[15px] uppercase leading-[25px] tracking-[5px] text-black transition-colors duration-300 hover:text-white md:block">
