@@ -3,6 +3,7 @@
 import Image from "next/image";
 import SocialIcons from "../components/SocialIcons";
 import { useState } from "react";
+import UnderlineHover from "../components/UnderlineHover";
 
 const NAV_ITEMS = ["About", "Careers", "Events", "Products", "Support"];
 
@@ -33,11 +34,8 @@ const Header = () => {
           {/* Desktop menu */}
           <ul className="font-regular hidden gap-8 text-[15px] leading-[25px] text-white md:flex">
             {NAV_ITEMS.map((item) => (
-              <li key={item} className="group relative cursor-pointer">
-                <span className="relative">
-                  {item}
-                  <span className="absolute -bottom-[8px] left-1/2 h-[2px] w-6 -translate-x-1/2 scale-x-0 transform bg-white transition-transform group-hover:scale-x-100"></span>
-                </span>
+              <li key={item}>
+                <UnderlineHover>{item}</UnderlineHover>
               </li>
             ))}
           </ul>
@@ -54,42 +52,38 @@ const Header = () => {
           </button>
         </nav>
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="fixed inset-0 z-50 flex h-screen w-screen flex-col bg-black md:hidden">
-            <div className="container mx-auto flex w-full max-w-[1110px] items-center justify-between px-6 pt-8 lg:px-0">
-              <Image
-                src="/images/logo.svg"
-                alt="Loopstudios"
-                width={192}
-                height={32}
-              />
-              <button
-                className="text-white"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z"
-                    fill="#FFF"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex h-full flex-col justify-center px-6">
-              <ul className="font-josefin text-fem-white flex flex-col gap-6 text-[24px] font-light uppercase">
-                {NAV_ITEMS.map((item) => (
-                  <li key={item} className="group relative cursor-pointer">
-                    <span className="relative">
-                      {item}
-                      <span className="absolute -bottom-[8px] left-1/2 h-[2px] w-6 -translate-x-1/2 scale-x-0 transform bg-white transition-transform group-hover:scale-x-100"></span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div
+          className={`fixed inset-0 z-50 flex h-screen w-screen transform flex-col bg-black transition-transform duration-300 ease-in-out md:hidden ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="container mx-auto flex w-full max-w-[1110px] items-center justify-between px-6 pt-8 lg:px-0">
+            <Image
+              src="/images/logo.svg"
+              alt="Loopstudios"
+              width={192}
+              height={32}
+            />
+            <button className="text-white" onClick={() => setIsMenuOpen(false)}>
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z"
+                  fill="#FFF"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </button>
           </div>
-        )}
+          <div className="flex h-full flex-col justify-center px-6">
+            <ul className="font-josefin text-fem-white flex flex-col gap-6 text-[24px] font-light uppercase">
+              {NAV_ITEMS.map((item) => (
+                <li key={item}>
+                  <UnderlineHover>{item}</UnderlineHover>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
         <h1 className="font-josefin mb-[10%] mt-auto w-full border-2 border-white p-6 text-[40px] font-light leading-[40px] text-white md:max-w-[650px] md:p-10 md:pb-8 md:text-[70px] md:leading-[70px]">
           IMMERSIVE EXPERIENCES THAT DELIVER
         </h1>
@@ -221,11 +215,8 @@ const Footer = () => {
           />
           <ul className="font-regular flex flex-col items-center gap-6 text-[15px] leading-[25px] text-white md:flex-row md:gap-8">
             {NAV_ITEMS.map((item) => (
-              <li key={item} className="group relative cursor-pointer">
-                <span className="relative">
-                  {item}
-                  <span className="absolute -bottom-[8px] left-1/2 h-[2px] w-6 -translate-x-1/2 scale-x-0 transform bg-white transition-transform group-hover:scale-x-100"></span>
-                </span>
+              <li key={item}>
+                <UnderlineHover>{item}</UnderlineHover>
               </li>
             ))}
           </ul>
