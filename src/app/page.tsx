@@ -84,7 +84,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <h1 className="font-josefin mb-[10%] mt-auto w-full border-2 border-white p-6 text-[40px] font-light leading-[40px] text-white md:max-w-[650px] md:p-10 md:pb-8 md:text-[70px] md:leading-[70px]">
+        <h1 className="font-josefin my-auto w-full border-2 border-white p-6 text-[40px] font-light leading-[40px] text-white md:max-w-[650px] md:p-10 md:pb-8 md:text-[70px] md:leading-[70px]">
           IMMERSIVE EXPERIENCES THAT DELIVER
         </h1>
       </div>
